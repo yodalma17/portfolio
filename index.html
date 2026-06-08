@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yorman Alvarez — Lead Developer en Solo Media Group. Shopify Plus, Apps, Headless, IA Agéntica y Full-Stack. 6+ años, 440+ repositorios." />
+  <meta name="author" content="Yorman Alvarez" />
+  <meta property="og:title" content="Yorman Alvarez — Lead Developer & Shopify Engineer" />
+  <meta property="og:description" content="6+ años construyendo eCommerce a medida, apps de Shopify y sistemas de IA agéntica." />
+  <title>Yorman Alvarez — Lead Developer & Shopify Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/hero.jpg" />
+</head>
+<body>
+
+  <!-- ======================= PRELOADER ======================= -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__name" data-split>YORMAN ALVAREZ</div>
+      <div class="preloader__bar"><span id="preloader-fill"></span></div>
+      <div class="preloader__count"><span id="preloader-count">0</span><i>%</i></div>
+    </div>
+  </div>
+
+  <!-- ======================= CUSTOM CURSOR ======================= -->
+  <div class="cursor" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- ======================= BACKGROUND CANVAS ======================= -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+
+  <!-- ======================= PROGRESS BAR ======================= -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- ======================= NAV ======================= -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__logo" data-cursor="link">
+      <span class="nav__logo-mark">YA</span>
+      <span class="nav__logo-dot"></span>
+    </a>
+    <nav class="nav__links">
+      <a href="#about" data-cursor="link">Sobre mí</a>
+      <a href="#stack" data-cursor="link">Stack</a>
+      <a href="#work" data-cursor="link">Proyectos</a>
+      <a href="#path" data-cursor="link">Trayectoria</a>
+      <a href="#contact" class="nav__cta" data-cursor="link">Contacto</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Menú"><span></span><span></span></button>
+  </header>
+
+  <!-- mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about">Sobre mí</a>
+    <a href="#stack">Stack</a>
+    <a href="#work">Proyectos</a>
+    <a href="#path">Trayectoria</a>
+    <a href="#contact">Contacto</a>
+  </div>
+
+  <main>
+    <!-- ======================= HERO ======================= -->
+    <section class="hero" id="hero">
+      <div class="hero__text">
+        <div class="hero__tagline reveal-up">
+          <span class="dot"></span> Disponible para proyectos · Madrid, España
+        </div>
+
+        <h1 class="hero__title">
+          <span class="line" data-split>Construyo</span>
+          <span class="line line--accent" data-split>experiencias</span>
+          <span class="line" data-split>digitales</span>
+        </h1>
+
+        <div class="hero__meta">
+          <p class="hero__role reveal-up">
+            <strong>Yorman Alvarez</strong> — Lead Developer &amp; Shopify Engineer
+          </p>
+          <p class="hero__desc reveal-up">
+            6+ años transformando ideas en eCommerce a medida para marcas
+            internacionales: temas Shopify Plus, apps a medida y desarrollo
+            front-end de precisión.
+          </p>
+        </div>
+
+        <div class="hero__tags">
+          <span data-float>Shopify Plus</span>
+          <span data-float>TypeScript</span>
+          <span data-float>React</span>
+          <span data-float>Liquid</span>
+          <span data-float>Headless</span>
+          <span data-float>Node</span>
+        </div>
+      </div>
+
+      <div class="hero__portrait" data-reveal>
+        <img src="assets/hero.jpg" alt="Yorman Alvarez" />
+        <div class="hero__portrait-badge"><span class="dot"></span> Solo Media Group</div>
+      </div>
+
+      <a href="#about" class="hero__scroll" data-cursor="link">
+        <span>Desliza</span>
+        <i></i>
+      </a>
+    </section>
+
+    <!-- ======================= MARQUEE ======================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marquee">
+        <span>Shopify Plus</span><b>✦</b><span>TypeScript</span><b>✦</b><span>React</span><b>✦</b>
+        <span>Next.js</span><b>✦</b><span>Liquid</span><b>✦</b><span>Node</span><b>✦</b>
+        <span>Agentic AI</span><b>✦</b><span>Laravel</span><b>✦</b><span>Vue · Nuxt</span><b>✦</b>
+        <span>Headless</span><b>✦</b><span>PostgreSQL</span><b>✦</b><span>Shopify Functions</span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- ======================= ABOUT ======================= -->
+    <section class="about" id="about">
+      <div class="section-label reveal-up"><span>01</span> — Sobre mí</div>
+      <div class="about__grid">
+        <div class="about__text">
+          <h2 class="about__lead" data-split-words>
+            Desarrollador full-stack especializado en el ecosistema Shopify,
+            liderando el equipo de desarrollo en <em>Solo Media Group</em>.
+          </h2>
+          <p class="reveal-up">
+            Empecé a programar en 2017 y desde 2020 construyo tiendas online
+            para marcas internacionales: temas Shopify Plus pixel-perfect,
+            funcionalidades a medida con Liquid y JavaScript, e integraciones
+            que hacen que cada tienda venda mejor.
+          </p>
+          <p class="reveal-up">
+            He puesto código en marcas como <em>Paw.com</em>, <em>Manukora</em>,
+            <em>Wild Planet</em> o <em>Brackish</em>, y en mis ratos libres
+            desarrollo apps y videojuegos. Me obsesiona el detalle, el rendimiento
+            y que las cosas se sientan vivas.
+          </p>
+          <div class="about__signature reveal-up">
+            <a href="https://www.linkedin.com/in/yodalma17/" target="_blank" rel="noopener" data-cursor="link">Certificado Shopify ✦ 2025</a>
+          </div>
+        </div>
+        <aside class="about__card" data-tilt>
+          <div class="about__avatar">
+            <img src="assets/hero.jpg" alt="Yorman Alvarez" />
+            <div class="about__avatar-glow"></div>
+          </div>
+          <ul class="about__facts">
+            <li><span>Rol</span><b>Lead Developer</b></li>
+            <li><span>Empresa</span><b>Solo Media Group</b></li>
+            <li><span>Base</span><b>Madrid 🇪🇸</b></li>
+            <li><span>Origen</span><b>Venezuela 🇻🇪</b></li>
+            <li><span>Desde</span><b>2017</b></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ======================= STATS ======================= -->
+    <section class="stats" id="numbers">
+      <div class="stat" data-reveal>
+        <div class="stat__num" data-count="6" data-suffix="+">0</div>
+        <div class="stat__label">Años de experiencia</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat__num" data-count="200" data-suffix="+">0</div>
+        <div class="stat__label">Repos en GitHub</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat__num" data-count="248" data-suffix="">0</div>
+        <div class="stat__label">Proyectos en GitLab</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat__num" data-count="2" data-suffix="">0</div>
+        <div class="stat__label">Certificaciones Shopify</div>
+      </div>
+    </section>
+
+    <!-- ======================= STACK ======================= -->
+    <section class="stack" id="stack">
+      <div class="section-label reveal-up"><span>02</span> — Stack &amp; Tecnologías</div>
+      <h2 class="section-title" data-split-words>Las herramientas con las que construyo</h2>
+
+      <div class="stack__grid">
+        <div class="stack__cat" data-reveal>
+          <h3>Lenguajes</h3>
+          <ul>
+            <li>TypeScript</li><li>JavaScript</li><li>Liquid</li>
+            <li>PHP</li><li>Python</li><li>C#</li><li>HTML · CSS</li>
+          </ul>
+        </div>
+        <div class="stack__cat" data-reveal>
+          <h3>Front-end</h3>
+          <ul>
+            <li>React</li><li>React Router 7</li><li>Next.js</li>
+            <li>Vue · Nuxt</li><li>Remix</li><li>Tailwind</li><li>Shadcn / Radix</li>
+          </ul>
+        </div>
+        <div class="stack__cat" data-reveal>
+          <h3>Shopify</h3>
+          <ul>
+            <li>Shopify Plus</li><li>Liquid Themes</li><li>Shopify Functions</li>
+            <li>Checkout Extensions</li><li>App Development</li><li>Headless / Hydrogen</li><li>Recharge</li>
+          </ul>
+        </div>
+        <div class="stack__cat" data-reveal>
+          <h3>Back-end &amp; Data</h3>
+          <ul>
+            <li>Node · Bun</li><li>Hono</li><li>Laravel</li>
+            <li>PostgreSQL</li><li>Prisma</li><li>SQLite</li><li>REST · GraphQL</li>
+          </ul>
+        </div>
+        <div class="stack__cat" data-reveal>
+          <h3>IA aplicada</h3>
+          <ul>
+            <li>Claude / Anthropic</li><li>ChatGPT / OpenAI</li><li>Claude Code</li>
+            <li>Prompt Engineering</li><li>Integraciones IA</li><li>Automatización</li>
+          </ul>
+        </div>
+        <div class="stack__cat" data-reveal>
+          <h3>Tooling &amp; Otros</h3>
+          <ul>
+            <li>Turborepo</li><li>Playwright</li><li>Docker</li>
+            <li>WordPress · WooCommerce</li><li>Magento 2</li><li>Solana</li><li>Git</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= FEATURED WORK ======================= -->
+    <section class="work" id="work">
+      <div class="section-label reveal-up"><span>03</span> — Proyectos destacados</div>
+      <h2 class="section-title" data-split-words>Una selección de lo que he construido</h2>
+
+      <div class="work__list" id="work-list">
+
+        <article class="project" data-reveal data-cursor="view">
+          <div class="project__index">01</div>
+          <div class="project__body">
+            <div class="project__head">
+              <h3 class="project__title">Paw.com</h3>
+              <span class="project__type">eCommerce · Pet</span>
+            </div>
+            <p class="project__desc">
+              Tienda <strong>Shopify Plus</strong> de camas y accesorios premium
+              para mascotas. Desarrollo y mantenimiento del tema, secciones a medida
+              y optimización de la experiencia de compra. Una de mis colaboraciones
+              más extensas (190+ commits).
+            </p>
+            <div class="project__tags">
+              <span>Shopify Plus</span><span>Liquid</span><span>JavaScript</span><span>CRO</span>
+            </div>
+          </div>
+          <a class="project__link" href="https://paw.com" target="_blank" rel="noopener" data-cursor="link" aria-label="Ver sitio Paw.com">↗</a>
+        </article>
+
+        <article class="project" data-reveal data-cursor="view">
+          <div class="project__index">02</div>
+          <div class="project__body">
+            <div class="project__head">
+              <h3 class="project__title">Manukora</h3>
+              <span class="project__type">eCommerce · Wellness</span>
+            </div>
+            <p class="project__desc">
+              Marca neozelandesa de <strong>miel de mānuka premium</strong>.
+              Desarrollo sobre el tema Shopify, landing pages de campaña y
+              componentes de conversión para una de las marcas de bienestar
+              DTC más reconocidas.
+            </p>
+            <div class="project__tags">
+              <span>Shopify Plus</span><span>Liquid</span><span>Landing Pages</span>
+            </div>
+          </div>
+          <a class="project__link" href="https://www.manukora.com" target="_blank" rel="noopener" data-cursor="link" aria-label="Ver sitio Manukora">↗</a>
+        </article>
+
+        <article class="project" data-reveal data-cursor="view">
+          <div class="project__index">03</div>
+          <div class="project__body">
+            <div class="project__head">
+              <h3 class="project__title">Wild Planet Foods</h3>
+              <span class="project__type">eCommerce · Food</span>
+            </div>
+            <p class="project__desc">
+              Marca de <strong>marisco y conservas sostenibles</strong> presente en
+              retail nacional en EE.&nbsp;UU. Desarrollo front-end del tema, soporte
+              continuo y mejoras de UX y rendimiento.
+            </p>
+            <div class="project__tags">
+              <span>Shopify</span><span>Liquid</span><span>UX</span><span>Performance</span>
+            </div>
+          </div>
+          <a class="project__link" href="https://wildplanetfoods.com" target="_blank" rel="noopener" data-cursor="link" aria-label="Ver sitio Wild Planet Foods">↗</a>
+        </article>
+
+        <article class="project" data-reveal data-cursor="view">
+          <div class="project__index">04</div>
+          <div class="project__body">
+            <div class="project__head">
+              <h3 class="project__title">Moment</h3>
+              <span class="project__type">eCommerce · Beverage</span>
+            </div>
+            <p class="project__desc">
+              <em>“Drink your meditation”</em> — bebidas funcionales con adaptógenos.
+              Desarrollo del tema Shopify y secciones de producto a medida para una
+              marca de wellness en pleno crecimiento.
+            </p>
+            <div class="project__tags">
+              <span>Shopify Plus</span><span>Liquid</span><span>JavaScript</span>
+            </div>
+          </div>
+          <a class="project__link" href="https://www.drinkmoment.com" target="_blank" rel="noopener" data-cursor="link" aria-label="Ver sitio Moment">↗</a>
+        </article>
+
+        <article class="project" data-reveal data-cursor="view">
+          <div class="project__index">05</div>
+          <div class="project__body">
+            <div class="project__head">
+              <h3 class="project__title">Vetnique Labs</h3>
+              <span class="project__type">eCommerce · Pet Health</span>
+            </div>
+            <p class="project__desc">
+              Suplementos veterinarios para perros y gatos. Desarrollo del tema
+              Shopify, páginas de producto y lógica de <strong>bundles y
+              suscripción</strong> (incluye la línea Glandex).
+            </p>
+            <div class="project__tags">
+              <span>Shopify</span><span>Liquid</span><span>Subscriptions</span>
+            </div>
+          </div>
+          <a class="project__link" href="https://vetnique.com" target="_blank" rel="noopener" data-cursor="link" aria-label="Ver sitio Vetnique Labs">↗</a>
+        </article>
+
+        <article class="project" data-reveal data-cursor="view">
+          <div class="project__index">06</div>
+          <div class="project__body">
+            <div class="project__head">
+              <h3 class="project__title">Brackish</h3>
+              <span class="project__type">eCommerce · Luxury</span>
+            </div>
+            <p class="project__desc">
+              Accesorios artesanales de pluma desde Charleston —
+              <strong>corbatines usados por celebridades</strong>. Desarrollo del
+              tema y de la experiencia de marca de lujo en Shopify Plus.
+            </p>
+            <div class="project__tags">
+              <span>Shopify Plus</span><span>Liquid</span><span>Luxury</span>
+            </div>
+          </div>
+          <a class="project__link" href="https://brackish.com" target="_blank" rel="noopener" data-cursor="link" aria-label="Ver sitio Brackish">↗</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================= ARCHIVE ======================= -->
+    <section class="archive">
+      <div class="section-label reveal-up"><span>04</span> — Y mucho más</div>
+      <h2 class="section-title" data-split-words>Más marcas y proyectos en los que he trabajado</h2>
+      <div class="archive__grid">
+        <a class="archive__item" data-reveal href="https://www.altmanluggage.com" target="_blank" rel="noopener" data-cursor="link"><b>Altman Luggage</b><span>Retail · desde 1920</span></a>
+        <a class="archive__item" data-reveal href="https://www.latercase.com" target="_blank" rel="noopener" data-cursor="link"><b>Latercase</b><span>Tech · fundas ultrafinas</span></a>
+        <a class="archive__item" data-reveal href="https://saunabox.com" target="_blank" rel="noopener" data-cursor="link"><b>SaunaBox</b><span>Wellness · saunas en casa</span></a>
+        <a class="archive__item" data-reveal href="https://github.com/yodalma17/KingsAndPigs" target="_blank" rel="noopener" data-cursor="link"><b>Kings &amp; Pigs</b><span>Videojuego · C#</span></a>
+        <a class="archive__item" data-reveal href="https://github.com/yodalma17" target="_blank" rel="noopener" data-cursor="link"><b>+200 proyectos</b><span>Ver mi GitHub →</span></a>
+      </div>
+    </section>
+
+    <!-- ======================= EXPERIENCE / PATH ======================= -->
+    <section class="path" id="path">
+      <div class="section-label reveal-up"><span>05</span> — Trayectoria</div>
+      <h2 class="section-title" data-split-words>El camino hasta aquí</h2>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline__line"><span id="timeline-fill"></span></div>
+
+        <div class="tl-item" data-reveal>
+          <div class="tl-item__date">2020 — Hoy</div>
+          <div class="tl-item__card">
+            <h3>Solo Media Group <em>· Lead Developer</em></h3>
+            <p>De Web Developer a líder del equipo de desarrollo. Temas Shopify,
+            apps con Functions, checkouts headless, integraciones y herramientas
+            internas de IA. 200+ proyectos para marcas internacionales.</p>
+          </div>
+        </div>
+
+        <div class="tl-item" data-reveal>
+          <div class="tl-item__date">2018 — 2020</div>
+          <div class="tl-item__card">
+            <h3>Ceftad <em>· Programador Web</em></h3>
+            <p>Desarrollo de sistemas web administrativo-contables y participación
+            en el desarrollo de sistemas de nómina.</p>
+          </div>
+        </div>
+
+        <div class="tl-item" data-reveal>
+          <div class="tl-item__date">2017 — 2018</div>
+          <div class="tl-item__card">
+            <h3>AllSoftware <em>· Programador</em></h3>
+            <p>Primeros pasos profesionales en programación y desarrollo de software.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="certs">
+        <a class="cert" data-reveal href="https://www.linkedin.com/in/yodalma17/details/certifications/" target="_blank" rel="noopener" data-cursor="link">
+          <div class="cert__badge">🏅</div>
+          <div>
+            <h4>Shopify Development Fundamentals</h4>
+            <span>Verified Skill Badge · Shopify · 2025 · Ver en LinkedIn →</span>
+          </div>
+        </a>
+        <a class="cert" data-reveal href="https://www.linkedin.com/in/yodalma17/details/certifications/" target="_blank" rel="noopener" data-cursor="link">
+          <div class="cert__badge">🏅</div>
+          <div>
+            <h4>Headless at Shopify for Developers</h4>
+            <span>Verified Skill Badge · Shopify · 2025 · Ver en LinkedIn →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ======================= CONTACT ======================= -->
+    <section class="contact" id="contact">
+      <div class="section-label reveal-up"><span>06</span> — Contacto</div>
+      <h2 class="contact__title">
+        <span class="line" data-split>¿Construimos</span>
+        <span class="line line--accent" data-split>algo juntos?</span>
+      </h2>
+      <a class="contact__mail" href="mailto:yalvarez@solomediagroup.com" data-cursor="link" data-magnetic>
+        yalvarez@solomediagroup.com
+      </a>
+
+      <div class="contact__links">
+        <a href="https://github.com/yodalma17" target="_blank" rel="noopener" data-cursor="link" data-magnetic>GitHub</a>
+        <a href="https://gitlab.com/yodalma17" target="_blank" rel="noopener" data-cursor="link" data-magnetic>GitLab</a>
+        <a href="https://www.linkedin.com/in/yodalma17/" target="_blank" rel="noopener" data-cursor="link" data-magnetic>LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Yorman Alvarez</span>
+    <span class="footer__made">Diseñado &amp; construido con código — y un poco de magia ✦</span>
+    <a href="#hero" data-cursor="link">Volver arriba ↑</a>
+  </footer>
+
+  <!-- ======================= LIBRARIES (CDN, global builds) ======================= -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

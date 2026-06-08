@@ -1,0 +1,12 @@
+{
+  "name": "yorman-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Yorman Alvarez",
+  "private": true,
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
