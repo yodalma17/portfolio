@@ -269,6 +269,14 @@ section { position: relative; z-index: 2; }
 .hero__role { font-size: clamp(18px, 2.2vw, 24px); }
 .hero__role strong { font-family: var(--font-display); }
 .hero__desc { color: var(--muted); max-width: 480px; }
+.hero__course {
+  display: inline-block; flex-basis: 100%; max-width: fit-content; font-size: 14px; line-height: 1.4; color: var(--ink);
+  padding: 9px 16px; border-radius: 14px; border: 1px solid rgba(124,92,255,.45); background: rgba(124,92,255,.12);
+  transition: border-color .4s var(--ease), background .4s var(--ease);
+}
+.hero__course b { color: var(--cyan); font-weight: 600; }
+.hero__course:hover { border-color: var(--cyan); background: rgba(34,227,255,.08); }
+.about__facts b { text-align: right; }
 
 .hero__tags {
   margin-top: 46px; display: flex; flex-wrap: wrap; gap: 12px;
@@ -314,7 +322,7 @@ section { position: relative; z-index: 2; }
 /* =========================================================
    ABOUT
    ========================================================= */
-.about, .stack, .work, .archive, .path, .contact {
+.about, .stack, .work, .archive, .games, .path, .contact {
   max-width: var(--maxw); margin: 0 auto;
   padding: clamp(80px, 12vh, 160px) var(--pad);
 }
@@ -453,6 +461,9 @@ section { position: relative; z-index: 2; }
   transition: transform .5s var(--ease), color .5s var(--ease);
 }
 .project:hover .project__link { color: var(--ink); transform: translate(6px,-6px) rotate(8deg); }
+/* the whole project card opens the live store */
+.project__link::after { content: ""; position: absolute; inset: 0; }
+.project { cursor: pointer; }
 
 /* =========================================================
    ARCHIVE
@@ -468,6 +479,42 @@ section { position: relative; z-index: 2; }
 .archive__item b { font-family: var(--font-display); font-size: 17px; }
 .archive__item span { font-size: 13px; color: var(--muted); }
 .archive__item:hover { transform: translateY(-6px); border-color: rgba(34,227,255,0.4); background: rgba(34,227,255,0.05); }
+
+/* =========================================================
+   GAMES (playable demos)
+   ========================================================= */
+.stack__cat--wide { grid-column: 1 / -1; }
+.games__intro { color: var(--muted); max-width: 70ch; margin: -20px 0 40px; }
+.games__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.game {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--panel-brd); border-radius: 18px; background: var(--panel);
+  transition: transform .5s var(--ease), border-color .5s var(--ease);
+}
+.game:hover { transform: translateY(-6px); border-color: rgba(124,92,255,0.45); }
+.game--featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.25fr 1fr; }
+.game__media { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-soft); }
+.game--featured .game__media { aspect-ratio: auto; min-height: 100%; }
+.game__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s var(--ease); }
+.game:hover .game__media img { transform: scale(1.04); }
+.game__badge {
+  position: absolute; top: 14px; left: 14px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  padding: 5px 11px; border-radius: 100px; background: rgba(6,7,13,.75); border: 1px solid rgba(255,255,255,.15);
+}
+.game__body { display: flex; flex-direction: column; gap: 12px; padding: 26px; flex: 1; }
+.game__body .project__head { margin-bottom: 0; }
+.game__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.05; }
+.game--featured .game__title { font-size: clamp(26px, 3vw, 40px); }
+.game__desc { color: var(--muted); font-size: 15px; }
+.game__keys { font-size: 13px; color: var(--muted-2); }
+.game__play {
+  align-self: flex-start; margin-top: auto; font-family: var(--font-display); font-weight: 600; font-size: 15px;
+  padding: 10px 20px; border-radius: 100px; background: var(--grad); color: #06070d;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.game__play:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(124,92,255,.35); }
+.games__intro a, .about__text a, .tl-item__card a { color: var(--cyan); }
+.certs .cert:first-child { grid-column: 1 / -1; }
 
 /* =========================================================
    TIMELINE
@@ -558,18 +605,21 @@ section { position: relative; z-index: 2; }
   .stack__grid { grid-template-columns: 1fr 1fr; }
   .archive__grid { grid-template-columns: 1fr 1fr; }
   .certs { grid-template-columns: 1fr; }
-  .project { grid-template-columns: 50px 1fr; }
-  .project__link { display: none; }
+  .project { grid-template-columns: 40px 1fr 24px; gap: 16px; align-items: start; }
+  .project__link { font-size: 22px; }
+  .games__grid { grid-template-columns: 1fr 1fr; }
+  .game--featured { grid-template-columns: 1fr; }
+  .game--featured .game__media { aspect-ratio: 16 / 9; }
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  .stats, .stack__grid, .archive__grid { grid-template-columns: 1fr; }
+  .stats, .stack__grid, .archive__grid, .games__grid { grid-template-columns: 1fr; }
   .hero__meta { gap: 18px; }
   .hero__scroll { display: none; }
   .footer { flex-direction: column; text-align: center; }
 
   /* tighter vertical rhythm on mobile */
-  .about, .stack, .work, .archive, .path, .contact { padding-top: 54px; padding-bottom: 54px; }
+  .about, .stack, .work, .archive, .games, .path, .contact { padding-top: 54px; padding-bottom: 54px; }
   .section-label { margin-bottom: 14px; }
   .section-title { margin-bottom: 26px; }
   .about__lead { margin-bottom: 20px; }
