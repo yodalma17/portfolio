@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMPIO 3D — Visor del personaje · Yorman Alvarez</title>
+  <link rel="icon" href="../../assets/hero.jpg" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+  <style>
+    :root { --bg: #06070d; --ink: #eef0f8; --muted: #8b90a8; --violet: #7c5cff; --brd: rgba(255,255,255,.12); }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body { background: radial-gradient(1200px 600px at 50% 20%, #1a1830, var(--bg)); color: var(--ink);
+      font-family: "Space Grotesk", system-ui, sans-serif; overflow: hidden; }
+    model-viewer { width: 100%; height: calc(100% - 110px); margin-top: 20px; --poster-color: transparent; }
+    .back { position: fixed; top: 16px; left: 16px; z-index: 10; color: var(--ink); text-decoration: none; font-size: 14px;
+      padding: 8px 14px; border: 1px solid var(--brd); border-radius: 100px; background: rgba(6,7,13,.7); }
+    .back:hover { border-color: var(--violet); }
+    .panel { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 10; display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between; gap: 12px; max-width: 900px; margin: 0 auto;
+      padding: 14px 18px; border: 1px solid var(--brd); border-radius: 16px; background: rgba(6,7,13,.75); backdrop-filter: blur(8px); }
+    .panel h1 { font-size: 18px; }
+    .panel p { font-size: 13px; color: var(--muted); }
+      padding: 7px 13px; border: 1px solid var(--brd); border-radius: 100px; }
+  </style>
+</head>
+<body>
+  <a class="back" href="/#games">← Volver al portafolio</a>
+
+  <model-viewer id="viewer" src="heroe_hq.glb" alt="Guerrero nómada de IMPIO 3D, modelado en Blender"
+    camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="2000" rotation-per-second="18deg"
+    shadow-intensity="1" exposure="1.05" environment-image="neutral" camera-orbit="0deg 80deg auto"></model-viewer>
+
+  <div class="panel">
+    <div>
+      <h1>IMPIO 3D · Guerrero nómada</h1>
+      <p>Arrastra para girar · rueda o pellizca para hacer zoom · versión en alta definición, rig Humanoid (Mixamo) para Unity</p>
+    </div>
+  </div>
+
+</body>
+</html>
